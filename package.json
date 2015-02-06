@@ -1,13 +1,13 @@
 {
   "name": "omotenashi-js",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "tools for not re-inventing the wheel, which contains deep copying, stringify/parse csv/json, number abbreviation, formatting time series data, simple statistic calculation and so on.",
   "main": "index.js",
   "scripts": {
     "test": "mocha test"
   },
   "keywords": [
-    "deep copyß",
+    "deep copy",
     "parser",
     "stringify",
     "json",
