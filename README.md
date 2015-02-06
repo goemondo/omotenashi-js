@@ -1,4 +1,4 @@
-# omotenashi
+# omotenashi-js
 
 This is released under the MIT License, see LICENSE.
 
@@ -8,7 +8,7 @@ This tools is for not re-inventing the wheel, which contain deep copying, string
 
 To install with [npm](http://github.com/isaacs/npm):
 
-    npm install omotenashi
+    npm install omotenashi-js
 
 Current version is tested with node v0.10.33.
 
@@ -55,7 +55,7 @@ And "num.isNumber/toNumer" is detect/transform string to number, which string ca
 ```javascript
 // copy.copy
 
-var cp = require("omotenashi").copy;
+var cp = require("omotenashi-js").copy;
 var src = {
   name: "yamamoto",
   phone: 012-345-6789,
@@ -132,7 +132,7 @@ var dst = src.reduce(function (p, v) {
 
 ```javascript
 // csv.stringify
-var csv = require("omotenashi").csv;
+var csv = require("omotenashi-js").csv;
 var options = {
   delim: String, // delimiter, default is ","
   br: String, // break code, default is "\n"
@@ -152,7 +152,7 @@ csv.stringify([{"your": "object"}], options, function (err, result) {
 
 ```javascript
 // csv.parse
-var csv = require("omotenashi").csv;
+var csv = require("omotenashi-js").csv;
 var options = {
   delim: String, // delimiter string, default is ",".
   trimLastDelim: Boolean, // true to remove extra delimiter in each line, like "a,b,c,".
@@ -175,7 +175,7 @@ csv.parse("your csv string", options, function (err, result) {
 
 ```javascript
 // json.stringify
-var json = require("omotenashi").json;
+var json = require("omotenashi-js").json;
 var options = {
   holdUndefined: Boolean, // to remain undefined.
   holdInfinity: Boolean, // to remain Infinity.
@@ -195,7 +195,7 @@ var result = json.stringify({"your": "object"}, options);
 
 ```javascript
 // json.parse
-var json = require("omotenashi").json;
+var json = require("omotenashi-js").json;
 var options = {
   holdUndefined: Boolean, // to parse "undefined" to undefined.
   holdInfinity: Boolean, // to parse "Infinity" to Inifinity.
@@ -218,7 +218,7 @@ var result = json.parse("your json string"}, options);
 
 ```javascript
 // num.toAbbr
-var num = require("omotenashi").num;
+var num = require("omotenashi-js").num;
 var result;
 
 result = num.toAbbr(1234); // "1.234K"
@@ -232,7 +232,7 @@ result = num.toAbbr(NaN, undefined, undefined, "N/A"); // "N/A"
 
 ```javascript
 // num.fromAbbr
-var num = require("omotenashi").num;
+var num = require("omotenashi-js").num;
 var result;
 
 result = num.fromAbbr(""); // 0
@@ -243,7 +243,7 @@ result = num.fromAbbr("1.234567891B"); // 1234567891
 
 ```javascript
 // num.toPercent
-var num = require("omotenashi").num;
+var num = require("omotenashi-js").num;
 var result;
 
 result = num.toPercent(NaN); // "NaN"
@@ -253,7 +253,7 @@ result = num.toPercent(NaN, "N/A"); // "N/A"
 
 ```javascript
 // num.fromPercent
-var num = require("omotenashi").num;
+var num = require("omotenashi-js").num;
 var result;
 
 result = num.fromPercent("NaN"); // NaN
@@ -262,7 +262,7 @@ result = num.fromPercent("12.3%"); // 0.123
 
 ```javascript
 // num.isNumber
-var num = require("omotenashi").num;
+var num = require("omotenashi-js").num;
 var result;
 
 result = num.isNumber("€12,345.6"); // true
@@ -272,7 +272,7 @@ result = num.isNumber("string"); // false
 ```
 ```javascript
 // num.toNumber
-var num = require("omotenashi").num;
+var num = require("omotenashi-js").num;
 var result;
 
 result = num.toNumber("€12,345.6"); // result is 12345.6
@@ -285,7 +285,7 @@ result = num.toNumber("string"); // NaN
 
 ```javascript
 // stats.mean/var/sd.
-var st = require("omotenashi").stats;
+var st = require("omotenashi-js").stats;
 var src1 = [60, 56, 61, 68, 51, 53, 69, 54];
 var src2 = [[[[60], [56, 61]], [68]], [51, 53, 69, 54]];
 
@@ -320,7 +320,7 @@ console.log(st.trans(src4));
 
 ```javascript
 // ts.formAnnualDays
-var ts = require("omotenashi").ts;
+var ts = require("omotenashi-js").ts;
 
 // source array should contain dates with the same timezone offset.
 // it is acceptable that source is multi-dimentional array that has dates in first line of source and

@@ -1,6 +1,6 @@
 {
-  "name": "omotenashi",
-  "version": "0.0.2",
+  "name": "omotenashi-js",
+  "version": "0.0.3",
   "description": "tools for not re-inventing the wheel, which contains deep copying, stringify/parse csv/json, number abbreviation, formatting time series data, simple statistic calculation and so on.",
   "main": "index.js",
   "scripts": {
@@ -18,10 +18,10 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/goemondo/omotenashi.git"
+    "url": "https://github.com/goemondo/omotenashi-js.git"
   },
   "bugs": {
-    "url": "https://github.com/goemondo/omotenashi/issues"
+    "url": "https://github.com/goemondo/omotenashi-js/issues"
   },
   "dependencies": {
   },
