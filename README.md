@@ -1,4 +1,4 @@
-# omotenachi
+# omotenashi
 
 This is released under the MIT License, see LICENSE.
 

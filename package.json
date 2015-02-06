@@ -1,6 +1,6 @@
 {
   "name": "omotenashi",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "tools for not re-inventing the wheel, which contains deep copying, stringify/parse csv/json, number abbreviation, formatting time series data, simple statistic calculation and so on.",
   "main": "index.js",
   "scripts": {
