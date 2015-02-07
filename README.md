@@ -143,6 +143,27 @@ var options = {
   exclusions: Array // array of string that is property name for ignoring.
 };
 
+// example
+// given object = [{
+//  string: "yamamoto",
+//  number: 12345,
+//  array: [10, 20, 30],
+//  object: {
+//    s: "taroh",
+//    n: 100
+//  }
+//}, {
+//  string: "satoh",
+//  string2: "jr",
+//  number: NaN,
+//  array: [100, 200, 300, 400],
+//  object: {
+//    s: "youko",
+//    n: 1000
+//  }
+//}];
+// returned string = '"string","number","array[0]","array[1]","array[2]","array[3]","object.s","object.n","string2"\n"yamamoto",12345,10,20,30,""NA"","taroh",100,""NA""\n"satoh","NA",100,200,300,400,"youko",1000,"jr"\n';
+
 var result = csv.stringify([{"your": "object"}], options);
 // or
 csv.stringify([{"your": "object"}], options, function (err, result) {
@@ -221,12 +242,12 @@ var result = json.parse("your json string"}, options);
 var num = require("omotenashi-js").num;
 var result;
 
+result = num.toAbbr(NaN); // "NaN"
 result = num.toAbbr(1234); // "1.234K"
 result = num.toAbbr(1234567891, 4); // "1.235G"
 result = num.toAbbr(1234567891); // "1.234567891B"
-result = num.toAbbr(-1234567891234567); // "-1.234567891234567P"
+result = num.toAbbr(-1234567891234567, undefined, "name"); // "-1.234567891234567Q"
 result = num.toAbbr(0.1234567891234567); // 0.1234567891234567
-result = num.toAbbr(NaN); // "NaN"
 result = num.toAbbr(NaN, undefined, undefined, "N/A"); // "N/A"
 ```
 
@@ -276,8 +297,8 @@ var num = require("omotenashi-js").num;
 var result;
 
 result = num.toNumber("€12,345.6"); // result is 12345.6
-result = num.toNumber("12,345.6£ "); // result is 12345.6
-result = num.toNumber("Ұ( 12,345.6)"); // result is 12345.6
+result = num.toNumber("12,345.6£ ", {trim: true}); // result is 12345.6
+result = num.toNumber("(12,345.6HK$ )", {trim: true, currency: ["HK\\$"]}); // result is 12345.6
 result = num.toNumber("string"); // NaN
 ```
 
