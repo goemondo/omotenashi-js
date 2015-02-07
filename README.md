@@ -287,8 +287,8 @@ var num = require("omotenashi-js").num;
 var result;
 
 result = num.isNumber("€12,345.6"); // true
-result = num.isNumber("12,345.6£ "); // true
-result = num.isNumber("Ұ( 12,345.6)"); // true
+result = num.isNumber("12,345.6£ ", {trim: true}); // true
+result = num.isNumber("(12,345.6HK$ )", {trim: true, currency: ["HK\\$"]}); // true
 result = num.isNumber("string"); // false
 ```
 ```javascript
